@@ -1,0 +1,31 @@
+#创建学生表
+create table student_table (
+    id int,
+    name varchar(50),
+    height decimal(5,2)
+);
+
+#查询表结构
+DESC student_table;
+
+#增加新的一列“体重”
+alter table student_table add weight decimal(5,2);
+
+#修改“体重”列为“BMI”
+alter table student_table change weight BMI decimal(5,2);
+
+#删除列“BMI”
+alter table student_table drop BMI;
+
+
+#添加数据‘甲’ ‘乙’
+insert into student_table (id, name, height) values (1, '甲', 175.5), (2, '乙', 168.0);
+
+#查询全表数据
+select * from student_table;
+
+#修改表中数据‘乙’为‘丙’
+update student_table set name='丙' where id=2;
+
+#删除表中数据 ‘丙’
+delete from student_table where id=2;
